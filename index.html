@@ -3,75 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — METLA Cleaner</title>
+    <title>Политика конфиденциальности — METLA Cleaner</title>
     <style>
+        :root {
+            --bg-color: #0A0E17;
+            --text-primary: rgba(255, 255, 255, 0.9);
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --accent: #1DE9B6;
+            --accent-violet: #B388FF;
+            --border-color: rgba(29, 233, 182, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Space Grotesk', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 24px;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background: #f8f9fa;
         }
+        
         .container {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            background: rgba(29, 233, 182, 0.02);
         }
-        h1 { color: #00D4FF; border-bottom: 2px solid #00D4FF; padding-bottom: 10px; }
-        h2 { color: #0066FF; margin-top: 25px; }
-        .date { color: #666; font-style: italic; margin-bottom: 20px; }
-        .contact-box {
-            background: #f0f8ff;
-            border-left: 4px solid #00D4FF;
-            padding: 15px;
-            margin-top: 30px;
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .update-date {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        
+        h2 {
+            color: var(--accent);
+            font-size: 20px;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        p {
+            margin-bottom: 16px;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        
+        strong {
+            color: var(--text-primary);
+        }
+        
+        .highlight {
+            background: rgba(29, 233, 182, 0.08);
+            border-left: 3px solid var(--accent);
+            padding: 12px 16px;
             border-radius: 0 8px 8px 0;
+            margin: 16px 0;
         }
-        a { color: #0066FF; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        
+        a:hover {
+            border-bottom-color: var(--accent);
+        }
+        
+        .contact-block {
+            background: rgba(29, 233, 182, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 16px;
+        }
+        
+        .contact-block p {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 16px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="date">Last updated: <span id="date"></span></p>
+        <h1>Политика конфиденциальности</h1>
+        <p class="update-date">Последнее обновление: 31 мая 2026 г.</p>
 
-        <h2>1. Introduction</h2>
-        <p>Welcome to <strong>METLA Cleaner</strong>. This Privacy Policy explains how we handle your information when you use our Android application.</p>
+        <h2>1. Введение</h2>
+        <p>Добро пожаловать в METLA Cleaner («мы», «наш», «приложение»). Мы создаём премиальный инструмент для очистки и оптимизации Android-устройств, и ваша конфиденциальность — наш главный приоритет.</p>
+        <p>Настоящая Политика конфиденциальности объясняет, как мы обращаемся с информацией при использовании вами нашего приложения. Пожалуйста, внимательно ознакомьтесь с этим документом.</p>
 
-        <h2>2. Information We Collect</h2>
-        <p><strong>METLA Cleaner does not collect, store, or transmit any personal data.</strong> All scanning and cleaning operations are performed locally on your device. No logs, analytics, or usage statistics are sent to external servers.</p>
-
-        <h2>3. Permissions Used</h2>
-        <p>The app requests the following Android permissions strictly for its core functionality:</p>
-        <ul>
-            <li><code>QUERY_ALL_PACKAGES</code> – to identify installed apps for cache analysis</li>
-            <li><code>READ_EXTERNAL_STORAGE</code> / <code>MANAGE_EXTERNAL_STORAGE</code> – to locate and remove temporary files</li>
-            <li><code>INTERNET</code> – only for checking app updates (optional)</li>
-        </ul>
-        <p>Permissions are used solely on-device and never shared.</p>
-
-        <h2>4. Third-Party Services</h2>
-        <p>METLA Cleaner does not integrate any third-party analytics, advertising SDKs, or tracking libraries. Your data never leaves your device.</p>
-
-        <h2>5. Children's Privacy</h2>
-        <p>Our app does not target users under 13. We do not knowingly collect information from children.</p>
-
-        <h2>6. Policy Updates</h2>
-        <p>We may update this policy if app functionality changes. The updated version will always be available at this URL.</p>
-
-        <div class="contact-box">
-            <h2>7. Contact Us</h2>
-            <p>If you have questions about this Privacy Policy or METLA Cleaner, please contact us:</p>
-            <p>📧 Email: <a href="mailto:metla.support@gmail.com">metla.support@gmail.com</a><br>
-            🌐 Telegram: <a href="https://t.me/metla_cleaner" target="_blank">@metla_cleaner</a></p>
+        <div class="highlight">
+            <p style="margin-bottom: 0;"><strong>Ключевой принцип:</strong> METLA Cleaner спроектирован так, чтобы работать полностью локально на вашем устройстве. Мы не собираем, не храним и не передаём ваши личные данные, файлы или информацию об устройстве на какие-либо внешние серверы.</p>
         </div>
+
+        <h2>2. Какую информацию мы НЕ собираем</h2>
+        <p>Чтобы внести полную ясность, вот список того, что METLA Cleaner <strong>никогда не делает</strong>:</p>
+        <ul>
+            <li><strong>Не собирает</strong> ваши личные данные (имя, email, телефон, адрес).</li>
+            <li><strong>Не сканирует</strong> и не загружает ваши файлы, фотографии, видео или документы в облако.</li>
+            <li><strong>Не анализирует</strong> ваше поведение для показа рекламы или маркетинга.</li>
+            <li><strong>Не передаёт</strong> данные третьим лицам, включая рекламные сети и аналитические сервисы.</li>
+            <li><strong>Не использует</strong> трекеры, файлы cookie или любые другие технологии слежения.</li>
+        </ul>
+
+        <h2>3. Какая информация обрабатывается локально</h2>
+        <p>Для выполнения своих функций METLA Cleaner обрабатывает следующую информацию <strong>исключительно на вашем устройстве</strong>:</p>
+        <ul>
+            <li><strong>Данные о файловой системе:</strong> приложение сканирует папки и файлы для поиска мусора, дубликатов, временных файлов и кэша. Результаты сканирования отображаются только вам и никуда не отправляются.</li>
+            <li><strong>Список установленных приложений:</strong> для функции очистки кэша и анализа активности приложений. Эта информация не покидает устройство.</li>
+            <li><strong>Статистика использования приложений:</strong> время активности приложений (только при предоставленном вами разрешении). Используется локально для функции «Режим сна».</li>
+        </ul>
+
+        <h2>4. Разрешения, запрашиваемые приложением</h2>
+        <p>Для полноценной работы METLA Cleaner запрашивает следующие разрешения Android:</p>
+        <ul>
+            <li><strong>Доступ ко всем файлам (MANAGE_EXTERNAL_STORAGE):</strong> необходим для глубокого сканирования папок, поиска дубликатов, удаления мусора и восстановления файлов из Карантина. Без этого разрешения часть функций очистки будет недоступна.</li>
+            <li><strong>Доступ к статистике использования (PACKAGE_USAGE_STATS):</strong> позволяет отображать время, проведённое в приложениях, и управлять фоновыми процессами.</li>
+            <li><strong>Доступ к уведомлениям (POST_NOTIFICATIONS):</strong> используется только для уведомлений о завершении автоочистки (если она включена).</li>
+            <li><strong>Доступ к интернету (INTERNET):</strong> используется исключительно для проверки наличия обновлений приложения и загрузки этой Политики конфиденциальности.</li>
+        </ul>
+        <p>Все разрешения используются строго по назначению и не служат для сбора данных.</p>
+
+        <h2>5. Карантин и история очистки</h2>
+        <p>Функция «Карантин» временно хранит удалённые файлы во внутренней памяти приложения. Это позволяет восстановить их в случае ошибки. Все данные Карантина и История очистки хранятся <strong>только на вашем устройстве</strong> и могут быть удалены вами в любой момент.</p>
+
+        <h2>6. Дети и конфиденциальность</h2>
+        <p>METLA Cleaner не предназначен для использования лицами младше 13 лет. Мы сознательно не собираем никакую информацию от детей младше 13 лет.</p>
+
+        <h2>7. Сторонние сервисы</h2>
+        <p>METLA Cleaner <strong>не использует</strong> сторонние аналитические системы, рекламные SDK, трекеры или любые другие библиотеки, которые могли бы передавать данные за пределы устройства. Приложение является полностью автономным и самодостаточным.</p>
+
+        <h2>8. Безопасность</h2>
+        <p>Поскольку все данные обрабатываются локально, риск утечки данных через интернет отсутствует. Мы рекомендуем вам использовать стандартные меры безопасности вашего устройства (блокировка экрана, шифрование) для защиты информации, хранящейся на нём.</p>
+
+        <h2>9. Изменения в Политике конфиденциальности</h2>
+        <p>Мы можем время от времени обновлять эту Политику конфиденциальности, чтобы отразить изменения в функциональности приложения или законодательства. Все изменения будут опубликованы на этой странице. Мы рекомендуем периодически проверять этот документ.</p>
+
+        <h2>10. Контакты</h2>
+        <p>Если у вас есть вопросы, предложения или жалобы относительно настоящей Политики конфиденциальности или работы METLA Cleaner, пожалуйста, свяжитесь с нами:</p>
+        
+        <div class="contact-block">
+            <p>📧 <strong>Email:</strong> <a href="mailto:metla.support@gmail.com">metla.support@gmail.com</a></p>
+            <p>🌐 <strong>Telegram:</strong> <a href="https://t.me/metla_cleaner" target="_blank">@metla_cleaner</a></p>
+            <p style="margin-top: 8px; color: var(--text-muted);">Время ответа: обычно в течение 24 часов.</p>
+        </div>
+        
+        <p style="margin-top: 32px; color: var(--text-muted); font-size: 13px;">© 2026 Al Badu team. Все права защищены. METLA Cleaner — премиальная очистка и оптимизация Android.</p>
     </div>
-    <script>
-        document.getElementById('date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    </script>
 </body>
 </html>
