@@ -42,6 +42,7 @@
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 8px;
+            text-align: center;
             background: linear-gradient(90deg, var(--accent), var(--accent-violet));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -52,6 +53,7 @@
             color: var(--text-muted);
             font-size: 14px;
             margin-bottom: 32px;
+            text-align: center;
         }
 
         h2 {
@@ -82,6 +84,13 @@
 
         strong {
             color: var(--text-primary);
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 13px;
         }
 
         .highlight {
@@ -124,58 +133,64 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="update-date">Last updated: May 31, 2026</p>
+        <p class="update-date">Last updated: August 28, 2026</p>
 
         <h2>1. Introduction</h2>
         <p>Welcome to METLA Cleaner ("we", "our", "the app"). We build a premium tool for cleaning and optimizing Android devices, and your privacy is our top priority.</p>
         <p>This Privacy Policy explains how we handle information when you use our app. Please read this document carefully.</p>
 
         <div class="highlight">
-            <p style="margin-bottom: 0;"><strong>Core principle:</strong> METLA Cleaner is designed to operate entirely locally on your device. We do not collect, store, or transmit your personal data, files, or device information to any external servers.</p>
+            <p style="margin-bottom: 0;"><strong>Core principle:</strong> Sensitive information about your device — such as your list of installed apps, app usage statistics, and the permissions other apps have requested — is processed entirely on your device and is never transmitted anywhere. Some other, limited information is sent to our service providers to keep the app reliable and to support paid subscriptions, as described in sections 2 and 3 below.</p>
         </div>
 
-        <h2>2. What we do NOT collect</h2>
-        <p>To be completely clear, here is what METLA Cleaner <strong>never does</strong>:</p>
-        <ul>
-            <li><strong>Does not collect</strong> personal data (name, email, phone, address).</li>
-            <li><strong>Does not scan</strong> or upload your files, photos, videos, or documents to the cloud.</li>
-            <li><strong>Does not analyze</strong> your behavior for advertising or marketing purposes.</li>
-            <li><strong>Does not share</strong> data with third parties, including ad networks or analytics services.</li>
-            <li><strong>Does not use</strong> trackers, cookies, or any other tracking technologies.</li>
-        </ul>
-
-        <h2>3. Information processed locally</h2>
-        <p>To perform its functions, METLA Cleaner processes the following information <strong>exclusively on your device</strong>:</p>
+        <h2>2. Information processed locally on your device</h2>
+        <p>To power its core cleaning and Anti-Spy features, METLA Cleaner reads the following directly on your device. This information is used only to power these specific features and <strong>never leaves your device</strong>:</p>
         <ul>
             <li><strong>File system data:</strong> the app scans folders and files to find junk, duplicates, temporary files, and cache. Scan results are shown only to you and are never sent anywhere.</li>
-            <li><strong>Installed app list:</strong> used for cache cleaning and app activity analysis. This information never leaves your device.</li>
-            <li><strong>App usage statistics:</strong> time spent in apps (only with your granted permission). Used locally for the Sleep Mode feature.</li>
+            <li><strong>List of installed apps:</strong> we read the names of apps installed on your device to identify ones that are rarely used or safe to remove.</li>
+            <li><strong>App usage statistics:</strong> with the Usage Access permission you grant, we check how often and for how long you use each app, to flag ones draining your battery or storage, and to power Sleep Mode.</li>
+            <li><strong>Permissions of other installed apps (Anti-Spy):</strong> we check which sensitive permissions — camera, microphone, contacts, SMS, location — other installed apps have requested, so we can warn you about risky ones.</li>
+        </ul>
+
+        <h2>3. Information sent to our service providers</h2>
+        <p>Some parts of the app rely on Google Firebase, a set of cloud services we use to keep the app reliable and to support paid subscriptions. This means limited information does leave your device for the specific purposes below. We do not sell this information, and we do not use it for advertising or tracking.</p>
+        <ul>
+            <li><strong>Anonymized analytics and crash reports</strong> (Firebase Analytics, Firebase Crashlytics): standard, anonymized information such as device model, OS version, and approximate location, used only to find bugs and improve app stability.</li>
+            <li><strong>Account and subscription data</strong> (Firebase Authentication, Cloud Functions, Cloud Firestore): if you purchase a subscription or join a Family plan, we store the minimum information needed to verify your purchase and manage family membership — an anonymous account identifier, your Google Play purchase token (used only to confirm your subscription with Google, never to track you elsewhere), and, if you choose to link a Google account, the associated email address (used only to restore your access if you reinstall the app). If you use Family sharing, we store the membership status of invited members so the app knows who has access.</li>
+            <li><strong>Purchases</strong> (Google Play Billing): all purchases are processed entirely by Google Play. We never see or store your payment card details.</li>
         </ul>
 
         <h2>4. Permissions requested by the app</h2>
-        <p>For full functionality, METLA Cleaner requests the following Android permissions:</p>
+        <p>Here is what each permission the app requests is actually used for:</p>
         <ul>
-            <li><strong>All files access (MANAGE_EXTERNAL_STORAGE):</strong> required for deep folder scanning, finding duplicates, removing junk, and restoring files from Quarantine. Without this permission, some cleaning features will be unavailable.</li>
-            <li><strong>Usage stats access (PACKAGE_USAGE_STATS):</strong> allows displaying time spent in apps and managing background processes.</li>
-            <li><strong>Notification permission (POST_NOTIFICATIONS):</strong> used only for notifications when auto-clean completes (if enabled).</li>
-            <li><strong>Internet access (INTERNET):</strong> used exclusively to load this Privacy Policy document.</li>
+            <li><strong>All files access (<code>MANAGE_EXTERNAL_STORAGE</code>):</strong> required for deep folder scanning, finding duplicates, removing junk, and restoring files from Quarantine.</li>
+            <li><strong>Photos, videos, audio (<code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code>, <code>READ_MEDIA_AUDIO</code>):</strong> to scan and clean your media files (Android 13 and above).</li>
+            <li><strong>Installed apps list (<code>QUERY_ALL_PACKAGES</code>):</strong> to power the cleaning and Anti-Spy features described in section 2.</li>
+            <li><strong>Usage stats access (<code>PACKAGE_USAGE_STATS</code>):</strong> to display time spent in apps and power Sleep Mode; granted separately in system settings.</li>
+            <li><strong>Uninstall apps (<code>REQUEST_DELETE_PACKAGES</code>):</strong> lets you uninstall an app directly from METLA Cleaner.</li>
+            <li><strong>Stop background apps (<code>KILL_BACKGROUND_PROCESSES</code>):</strong> lets you stop a running app from the Apps screen.</li>
+            <li><strong>Notification permission (<code>POST_NOTIFICATIONS</code>):</strong> used for notifications about scheduled auto-clean results and reminders.</li>
+            <li><strong>Network status (<code>ACCESS_WIFI_STATE</code>, <code>ACCESS_NETWORK_STATE</code>):</strong> used by the Device Pulse screen to show your current network status.</li>
+            <li><strong>Bluetooth (<code>BLUETOOTH</code>, <code>BLUETOOTH_CONNECT</code>):</strong> used by the Device Pulse screen to show whether Bluetooth is connected.</li>
+            <li><strong>Precise location (<code>ACCESS_FINE_LOCATION</code>):</strong> used only so Android will reveal the name of your connected Wi-Fi network on the Device Pulse screen — this is a requirement of Android itself, not something we use for tracking. We do not read, store, or transmit your actual location.</li>
+            <li><strong>Internet access (<code>INTERNET</code>):</strong> required for the Firebase and Google Play Billing services described in section 3, and to load this Privacy Policy page.</li>
         </ul>
-        <p>All permissions are used strictly for their stated purpose and are not used for data collection.</p>
+        <p>All permissions are used strictly for their stated purpose.</p>
 
         <h2>5. Quarantine and cleaning history</h2>
         <p>The Quarantine feature temporarily stores deleted files in the app's internal storage, allowing you to restore them if needed. All Quarantine data and Cleaning History are stored <strong>only on your device</strong> and can be deleted by you at any time.</p>
 
-        <h2>6. Children's privacy</h2>
+        <h2>6. Data retention and account deletion</h2>
+        <p>You can delete your account at any time from <strong>Profile → Account &amp; data → Delete account</strong> in the app, or by emailing us at <a href="mailto:metla.support@gmail.com">metla.support@gmail.com</a>. This permanently removes your account data from our servers. One exception: we keep a record of your purchase token to prevent subscription fraud, as required for anti-fraud purposes — by that point it no longer contains any information that identifies you. Deleting your account does not cancel a Google Play subscription; that must be cancelled separately in Google Play.</p>
+
+        <h2>7. Children's privacy</h2>
         <p>METLA Cleaner is not intended for use by persons under the age of 13. We do not knowingly collect any information from children under 13.</p>
 
-        <h2>7. Third-party services</h2>
-        <p>METLA Cleaner <strong>does not use</strong> third-party analytics systems, advertising SDKs, trackers, or any other libraries that could transmit data outside your device. The app is fully self-contained and autonomous.</p>
-
         <h2>8. Security</h2>
-        <p>Since all data is processed locally, there is no risk of data leakage via the internet. We recommend using your device's standard security measures (screen lock, encryption) to protect information stored on it.</p>
+        <p>Locally stored data is protected by your device's own security, such as your screen lock and disk encryption. Information sent to our service providers (section 3) is protected using Google's standard security practices.</p>
 
         <h2>9. Changes to this Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time to reflect changes in app functionality or applicable law. All changes will be published on this page. We recommend checking this document periodically.</p>
+        <p>We may update this Privacy Policy from time to time to reflect changes in app functionality or applicable law. All changes will be published on this page with a new "Last updated" date above. We recommend checking this document periodically.</p>
 
         <h2>10. Contact us</h2>
         <p>If you have questions, suggestions, or complaints regarding this Privacy Policy or METLA Cleaner, please contact us:</p>
