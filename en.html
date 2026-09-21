@@ -136,7 +136,7 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="update-date">Last updated: September 8, 2026</p>
+        <p class="update-date">Last updated: September 21, 2026</p>
 
         <h2>1. Introduction</h2>
         <p>Welcome to METLA Cleaner ("we", "our", "the app"). We build a premium tool for cleaning and optimizing Android devices, and your privacy is our top priority.</p>
@@ -151,8 +151,8 @@
         <ul>
             <li><strong>File system data:</strong> the app scans folders and files to find junk, duplicates, temporary files, and cache. Scan results are shown only to you and are never sent anywhere.</li>
             <li><strong>List of installed apps:</strong> we read the names of apps installed on your device to identify ones that are rarely used or safe to remove.</li>
-            <li><strong>App usage statistics:</strong> with the Usage Access permission you grant, we check how often and for how long you use each app, to flag ones draining your battery or storage, and to power Sleep Mode.</li>
-            <li><strong>Permissions of other installed apps (Anti-Spy):</strong> we check which sensitive permissions — camera, microphone, contacts, SMS, location — other installed apps have requested, so we can warn you about risky ones.</li>
+            <li><strong>App usage statistics:</strong> with the Usage Access permission you grant, we check how often and for how long you use each app, to flag ones draining your battery or storage. The same permission gives access to the system event log — when an app started a background service and when you last opened it. The log powers Radar, which tells you that an app you restricted is running in the background again. It is read on your device and never sent anywhere.</li>
+            <li><strong>Permissions of other installed apps (Anti-Spy):</strong> we check which sensitive permissions other installed apps have requested and which of those they were actually granted, so we can warn you about risky ones. Seven categories are checked: camera, microphone, location, contacts, phone, SMS and storage.</li>
         </ul>
 
         <h2>3. Information sent to our service providers</h2>
@@ -168,8 +168,10 @@
         <ul>
             <li><strong>All files access (<code>MANAGE_EXTERNAL_STORAGE</code>):</strong> required for deep folder scanning, finding duplicates, removing junk, and restoring files from Quarantine.</li>
             <li><strong>Photos, videos, audio (<code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code>, <code>READ_MEDIA_AUDIO</code>):</strong> to scan and clean your media files (Android 13 and above).</li>
+            <li><strong>Selected photos and videos (<code>READ_MEDIA_VISUAL_USER_SELECTED</code>):</strong> on Android 14 and above you can grant access to selected files instead of your whole gallery — the app works in that mode too, with the files you picked.</li>
+            <li><strong>Device storage on earlier Android versions (<code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code>):</strong> the same scanning and cleaning work on Android 12 and below, where All Files Access does not exist yet.</li>
             <li><strong>Installed apps list (<code>QUERY_ALL_PACKAGES</code>):</strong> to power the cleaning and Anti-Spy features described in section 2.</li>
-            <li><strong>Usage stats access (<code>PACKAGE_USAGE_STATS</code>):</strong> to display time spent in apps and power Sleep Mode; granted separately in system settings.</li>
+            <li><strong>Usage stats access (<code>PACKAGE_USAGE_STATS</code>):</strong> to display time spent in apps and to power Radar — watching background activity of apps you restricted yourself; granted separately in system settings.</li>
             <li><strong>Uninstall apps (<code>REQUEST_DELETE_PACKAGES</code>):</strong> lets you uninstall an app directly from METLA Cleaner.</li>
             <li><strong>Stop background apps (<code>KILL_BACKGROUND_PROCESSES</code>):</strong> lets you stop a running app from the Apps screen.</li>
             <li><strong>Notification permission (<code>POST_NOTIFICATIONS</code>):</strong> used for notifications about scheduled auto-clean results and reminders.</li>
