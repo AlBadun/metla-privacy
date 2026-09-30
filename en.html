@@ -136,7 +136,7 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="update-date">Last updated: September 25, 2026</p>
+        <p class="update-date">Last updated: September 30, 2026</p>
 
         <h2>1. Introduction</h2>
         <p>Welcome to METLA Cleaner ("we", "our", "the app"). We build a premium tool for cleaning and optimizing Android devices, and your privacy is our top priority.</p>
@@ -177,7 +177,7 @@
             <li><strong>Notification permission (<code>POST_NOTIFICATIONS</code>):</strong> used for notifications about scheduled auto-clean results and reminders.</li>
             <li><strong>Network status (<code>ACCESS_WIFI_STATE</code>, <code>ACCESS_NETWORK_STATE</code>):</strong> used by the Device Pulse screen to show your current network status.</li>
             <li><strong>Bluetooth (<code>BLUETOOTH</code>, <code>BLUETOOTH_CONNECT</code>):</strong> used by the Device Pulse screen to show whether Bluetooth is connected.</li>
-            <li><strong>Precise location (<code>ACCESS_FINE_LOCATION</code>):</strong> used only so Android will reveal the name of your connected Wi-Fi network on the Device Pulse screen — this is a requirement of Android itself, not something we use for tracking. We do not read, store, or transmit your actual location.</li>
+            <li><strong>Precise location (<code>ACCESS_FINE_LOCATION</code>):</strong> requested only by versions before 1.2.0, so that Android would reveal the name of your connected Wi-Fi network on the Device Pulse screen. The app never read, stored, or transmitted your actual location. Since version 1.2.0 this permission is no longer requested.</li>
             <li><strong>Biometrics — fingerprint or face (<code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code>):</strong> used for the Zero-Tap feature — confirming your identity when registering and using a sign-in key between your devices. The biometric check itself is performed by Android's own secure system — we never receive or store your biometric data.</li>
             <li><strong>Advertising ID (<code>AD_ID</code>, <code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>):</strong> added automatically by the Firebase Analytics library we use (section 3). We do not show ads and do not use this identifier to build advertising profiles.</li>
             <li><strong>Internet access (<code>INTERNET</code>):</strong> required for the Firebase and Google Play Billing services described in section 3, and to load this Privacy Policy page.</li>
@@ -185,7 +185,10 @@
         <p>All permissions are used strictly for their stated purpose.</p>
 
         <h2>5. Quarantine and cleaning history</h2>
-        <p>The Quarantine feature temporarily stores deleted files in the app's internal storage, allowing you to restore them if needed. All Quarantine data and Cleaning History are stored <strong>only on your device</strong> and can be deleted by you at any time.</p>
+        <p>Files you delete in METLA Cleaner first go to Quarantine, so you can restore them. If the app has All files access, a file is moved into the hidden <code>.METLA_Trash</code> folder at the root of the same storage it was on (phone storage or memory card). Otherwise a copy is kept in the app's internal storage. Quarantined files are stored <strong>only on your device</strong> and are never sent anywhere.</p>
+        <p>A file is kept for as long as you chose in settings and is then deleted permanently if Auto-clean quarantine is on. If Quarantine grows beyond the size you set, the oldest files are removed earlier. You can restore a file or delete it permanently at any time.</p>
+        <p>When you uninstall the app, its internal storage is erased, but the hidden <code>.METLA_Trash</code> folder remains: Android does not remove it together with the app. You can delete it with any file manager.</p>
+        <p>Cleaning history is stored only on your device, and you can clear it at any time.</p>
 
         <h2>6. Data retention and account deletion</h2>
         <p>You can delete your account at any time from <strong>Profile → Account &amp; data → Delete account</strong> in the app, or by emailing us at <a href="mailto:metla.support@gmail.com">metla.support@gmail.com</a>. This permanently removes your account data from our servers. Two things remain. First, a deletion marker under the random internal ID of the deleted account: it records only that the account was deleted and when, contains no name, email, device or purchase data, and is kept indefinitely so that a copy of the app still signed in with the deleted account cannot re-create it, rejoin a family or claim a purchase. Second, standard technical logs of our servers (Google Cloud) may contain the internal account ID for up to 30 days. We keep nothing about your purchases: the link between your account and your Google Play purchases is removed on purpose, so a purchase that is still valid can be linked to a new account. If you were an approved tester, your email address itself stays on our tester list, which we keep by hand and independently of accounts; you can ask us by email to remove it as well. Deleting your account does not cancel a Google Play subscription; that must be cancelled separately in Google Play.</p>
