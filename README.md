@@ -1,2 +1,2 @@
 # metla-privacy
-Privacy Policy for META Cleaner
+Privacy Policy and Terms of Use for METLA Cleaner

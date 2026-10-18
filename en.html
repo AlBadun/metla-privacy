@@ -8,18 +8,14 @@
         :root {
             --bg-color: #0A0E17;
             --text-primary: rgba(255, 255, 255, 0.9);
-            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-secondary: rgba(255, 255, 255, 0.75);
             --text-muted: rgba(255, 255, 255, 0.5);
             --accent: #1DE9B6;
             --accent-violet: #B388FF;
             --border-color: rgba(29, 233, 182, 0.15);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Space Grotesk', Roboto, sans-serif;
@@ -27,7 +23,7 @@
             color: var(--text-primary);
             line-height: 1.7;
             padding: 24px;
-            max-width: 800px;
+            max-width: 820px;
             margin: 0 auto;
         }
 
@@ -36,6 +32,16 @@
             border-radius: 16px;
             padding: 32px;
             background: rgba(29, 233, 182, 0.02);
+        }
+
+        .topnav {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 14px;
+            margin-bottom: 24px;
+            color: var(--text-muted);
         }
 
         h1 {
@@ -49,169 +55,346 @@
             background-clip: text;
         }
 
-        .update-date {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 32px;
-            text-align: center;
-        }
+        .update-date { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; text-align: center; }
 
         h2 {
             color: var(--accent);
             font-size: 20px;
-            margin-top: 32px;
+            margin-top: 36px;
             margin-bottom: 12px;
             padding-bottom: 8px;
             border-bottom: 1px solid var(--border-color);
-            text-align: center;
         }
 
-        p {
-            margin-bottom: 16px;
-            font-size: 15px;
-            color: var(--text-secondary);
-            text-align: justify;
-        }
+        h3 { color: var(--text-primary); font-size: 16px; margin: 20px 0 8px; }
 
-        ul {
-            margin-bottom: 16px;
-            padding-left: 24px;
-        }
+        p { margin-bottom: 14px; font-size: 15px; color: var(--text-secondary); }
 
-        li {
-            margin-bottom: 8px;
-            font-size: 15px;
-            color: var(--text-secondary);
-            text-align: justify;
-        }
+        ul { margin-bottom: 16px; padding-left: 22px; }
 
-        strong {
-            color: var(--text-primary);
-        }
+        li { margin-bottom: 8px; font-size: 15px; color: var(--text-secondary); }
+
+        strong { color: var(--text-primary); }
 
         code {
             background: rgba(255, 255, 255, 0.08);
             padding: 1px 6px;
             border-radius: 4px;
             font-size: 13px;
+            word-break: break-all;
         }
 
         .highlight {
             background: rgba(29, 233, 182, 0.08);
             border-left: 3px solid var(--accent);
-            padding: 12px 16px;
+            padding: 14px 18px;
             border-radius: 0 8px 8px 0;
-            margin: 16px 0;
+            margin: 16px 0 8px;
         }
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-        }
+        .highlight ul { margin-bottom: 0; }
 
-        a:hover {
-            border-bottom-color: var(--accent);
-        }
-
-        .contact-block {
-            background: rgba(29, 233, 182, 0.05);
+        .card {
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 20px;
-            margin-top: 16px;
+            padding: 16px 18px;
+            margin: 12px 0;
+            background: rgba(255, 255, 255, 0.02);
         }
 
-        .contact-block p {
-            margin-bottom: 8px;
-        }
+        .card h3 { margin-top: 0; color: var(--accent); }
+
+        .card dl { display: grid; grid-template-columns: 120px 1fr; gap: 6px 12px; font-size: 14px; }
+
+        .card dt { color: var(--text-muted); }
+
+        .card dd { color: var(--text-secondary); }
+
+        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+
+        a:hover { border-bottom-color: var(--accent); }
+
+        .contact-block { background: rgba(29, 233, 182, 0.05); border-radius: 12px; padding: 20px; margin-top: 16px; }
+
+        .contact-block p { margin-bottom: 8px; }
+
+        .footer { margin-top: 32px; color: var(--text-muted); font-size: 13px; }
 
         @media (max-width: 600px) {
-            body { padding: 16px; }
-            .container { padding: 20px; }
+            body { padding: 12px; }
+            .container { padding: 18px; }
             h1 { font-size: 24px; }
+            .card dl { grid-template-columns: 1fr; gap: 2px; }
+            .card dd { margin-bottom: 8px; }
         }
+        .nw { white-space: nowrap; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="update-date">Last updated: September 30, 2026</p>
+        <nav class="topnav">
+            <span>English · <a href="./">Русский</a></span>
+            <a href="terms/en.html">Terms of Use</a>
+        </nav>
 
-        <h2>1. Introduction</h2>
-        <p>Welcome to METLA Cleaner ("we", "our", "the app"). We build a premium tool for cleaning and optimizing Android devices, and your privacy is our top priority.</p>
-        <p>This Privacy Policy explains how we handle information when you use our app. Please read this document carefully.</p>
+        <h1>Privacy Policy</h1>
+        <p class="update-date">METLA Cleaner · Last updated: October&nbsp;18, 2026</p>
+
+        <p>This policy explains what information the METLA Cleaner app for Android (“METLA”) reads and sends: why, who keeps it and for how long. It describes METLA versions newer than 1.3.0.</p>
 
         <div class="highlight">
-            <p style="margin-bottom: 0;"><strong>Core principle:</strong> Sensitive information about your device — such as your list of installed apps, app usage statistics, and the permissions other apps have requested — is processed entirely on your device and is never transmitted anywhere. Some other, limited information is sent to our service providers to keep the app reliable and to support paid subscriptions, as described in sections 2 and 3 below.</p>
+            <ul>
+                <li><strong>Your files, your list of apps, usage statistics and other apps’ permissions never leave your device.</strong> METLA does not share your list of apps with anyone&nbsp;— not with us and not with other companies. The only exception is the error text in a crash report, if you agreed to crash reports (section 3).</li>
+                <li><strong>Little leaves the device:</strong> an anonymous account and service data that plans and server protection cannot work without. Analytics and crash reports are sent only after you agree. All of it is listed in section 3.</li>
+                <li><strong>We do not sell information about you.</strong> METLA currently shows no ads and does not collect the advertising ID.</li>
+            </ul>
         </div>
 
-        <h2>2. Information processed locally on your device</h2>
-        <p>To power its core cleaning and Anti-Spy features, METLA Cleaner reads the following directly on your device. This information is used only to power these specific features and <strong>never leaves your device</strong>:</p>
-        <ul>
-            <li><strong>File system data:</strong> the app scans folders and files to find junk, duplicates, temporary files, and cache. Scan results are shown only to you and are never sent anywhere.</li>
-            <li><strong>List of installed apps:</strong> we read the names of apps installed on your device to identify ones that are rarely used or safe to remove.</li>
-            <li><strong>App usage statistics:</strong> with the Usage Access permission you grant, we check how often and for how long you use each app, to flag ones draining your battery or storage. The same permission gives access to the system event log — when an app started a background service and when you last opened it. The log powers Radar, which tells you that an app you restricted is running in the background again. It is read on your device and never sent anywhere.</li>
-            <li><strong>Permissions of other installed apps (Anti-Spy):</strong> we check which sensitive permissions other installed apps have requested and which of those they were actually granted, so we can warn you about risky ones. Seven categories are checked: camera, microphone, location, contacts, phone, SMS and storage.</li>
-        </ul>
-
-        <h2>3. Information sent to our service providers</h2>
-        <p>Some parts of the app rely on Google Firebase, a set of cloud services we use to keep the app reliable and to support paid subscriptions. This means limited information does leave your device for the specific purposes below. We do not sell this information, and we do not use it for advertising or tracking.</p>
-        <ul>
-            <li><strong>Anonymized analytics and crash reports</strong> (Firebase Analytics, Firebase Crashlytics): standard, anonymized information such as device model, OS version, and approximate location, used only to find bugs and improve app stability.</li>
-            <li><strong>Account and subscription data</strong> (Firebase Authentication, Cloud Functions, Cloud Firestore): if you purchase a subscription or join a Family plan, we store the minimum information needed to verify your purchase and manage family membership — an anonymous account identifier, your Google Play purchase token (used only to confirm your subscription with Google, never to track you elsewhere), and, if you choose to link a Google account, the associated email address (used only to restore your access if you reinstall the app). If you use Family sharing, we store the membership status of invited members so the app knows who has access.</li>
-            <li><strong>Purchases</strong> (Google Play Billing): all purchases are processed entirely by Google Play. We never see or store your payment card details.</li>
-        </ul>
-
-        <h2>4. Permissions requested by the app</h2>
-        <p>Here is what each permission the app requests is actually used for:</p>
-        <ul>
-            <li><strong>All files access (<code>MANAGE_EXTERNAL_STORAGE</code>):</strong> required for deep folder scanning, finding duplicates, removing junk, and restoring files from Quarantine.</li>
-            <li><strong>Photos, videos, audio (<code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code>, <code>READ_MEDIA_AUDIO</code>):</strong> to scan and clean your media files (Android 13 and above).</li>
-            <li><strong>Selected photos and videos (<code>READ_MEDIA_VISUAL_USER_SELECTED</code>):</strong> on Android 14 and above you can grant access to selected files instead of your whole gallery — the app works in that mode too, with the files you picked.</li>
-            <li><strong>Device storage on earlier Android versions (<code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code>):</strong> the same scanning and cleaning work on Android 12 and below, where All Files Access does not exist yet.</li>
-            <li><strong>Installed apps list (<code>QUERY_ALL_PACKAGES</code>):</strong> to power the cleaning and Anti-Spy features described in section 2.</li>
-            <li><strong>Usage stats access (<code>PACKAGE_USAGE_STATS</code>):</strong> to display time spent in apps and to power Radar — watching background activity of apps you restricted yourself; granted separately in system settings.</li>
-            <li><strong>Uninstall apps (<code>REQUEST_DELETE_PACKAGES</code>):</strong> lets you uninstall an app directly from METLA Cleaner.</li>
-            <li><strong>Stop background apps (<code>KILL_BACKGROUND_PROCESSES</code>):</strong> lets you stop a running app from the Apps screen.</li>
-            <li><strong>Notification permission (<code>POST_NOTIFICATIONS</code>):</strong> used for notifications about scheduled auto-clean results and reminders.</li>
-            <li><strong>Network status (<code>ACCESS_WIFI_STATE</code>, <code>ACCESS_NETWORK_STATE</code>):</strong> used by the Device Pulse screen to show your current network status.</li>
-            <li><strong>Bluetooth (<code>BLUETOOTH</code>, <code>BLUETOOTH_CONNECT</code>):</strong> used by the Device Pulse screen to show whether Bluetooth is connected.</li>
-            <li><strong>Precise location (<code>ACCESS_FINE_LOCATION</code>):</strong> requested only by versions before 1.2.0, so that Android would reveal the name of your connected Wi-Fi network on the Device Pulse screen. The app never read, stored, or transmitted your actual location. Since version 1.2.0 this permission is no longer requested.</li>
-            <li><strong>Biometrics — fingerprint or face (<code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code>):</strong> used for the Zero-Tap feature — confirming your identity when registering and using a sign-in key between your devices. The biometric check itself is performed by Android's own secure system — we never receive or store your biometric data.</li>
-            <li><strong>Advertising ID (<code>AD_ID</code>, <code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>):</strong> added automatically by the Firebase Analytics library we use (section 3). We do not show ads and do not use this identifier to build advertising profiles.</li>
-            <li><strong>Internet access (<code>INTERNET</code>):</strong> required for the Firebase and Google Play Billing services described in section 3, and to load this Privacy Policy page.</li>
-        </ul>
-        <p>All permissions are used strictly for their stated purpose.</p>
-
-        <h2>5. Quarantine and cleaning history</h2>
-        <p>Files you delete in METLA Cleaner first go to Quarantine, so you can restore them. If the app has All files access, a file is moved into the hidden <code>.METLA_Trash</code> folder at the root of the same storage it was on (phone storage or memory card). Otherwise a copy is kept in the app's internal storage. Quarantined files are stored <strong>only on your device</strong> and are never sent anywhere.</p>
-        <p>A file is kept for as long as you chose in settings and is then deleted permanently if Auto-clean quarantine is on. If Quarantine grows beyond the size you set, the oldest files are removed earlier. You can restore a file or delete it permanently at any time.</p>
-        <p>When you uninstall the app, its internal storage is erased, but the hidden <code>.METLA_Trash</code> folder remains: Android does not remove it together with the app. You can delete it with any file manager.</p>
-        <p>Cleaning history is stored only on your device, and you can clear it at any time.</p>
-
-        <h2>6. Data retention and account deletion</h2>
-        <p>You can delete your account at any time from <strong>Profile → Account &amp; data → Delete account</strong> in the app, or by emailing us at <a href="mailto:metla.support@gmail.com">metla.support@gmail.com</a>. This permanently removes your account data from our servers. Two things remain. First, a deletion marker under the random internal ID of the deleted account: it records only that the account was deleted and when, contains no name, email, device or purchase data, and is kept indefinitely so that a copy of the app still signed in with the deleted account cannot re-create it, rejoin a family or claim a purchase. Second, standard technical logs of our servers (Google Cloud) may contain the internal account ID for up to 30 days. We keep nothing about your purchases: the link between your account and your Google Play purchases is removed on purpose, so a purchase that is still valid can be linked to a new account. If you were an approved tester, your email address itself stays on our tester list, which we keep by hand and independently of accounts; you can ask us by email to remove it as well. Deleting your account does not cancel a Google Play subscription; that must be cancelled separately in Google Play.</p>
-
-        <h2>7. Children's privacy</h2>
-        <p>METLA Cleaner is not intended for use by persons under the age of 13. We do not knowingly collect any information from children under 13.</p>
-
-        <h2>8. Security</h2>
-        <p>Locally stored data is protected by your device's own security, such as your screen lock and disk encryption. Information sent to our service providers (section 3) is protected using Google's standard security practices.</p>
-
-        <h2>9. Changes to this Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time to reflect changes in app functionality or applicable law. All changes will be published on this page with a new "Last updated" date above. We recommend checking this document periodically.</p>
-
-        <h2>10. Contact us</h2>
-        <p>If you have questions, suggestions, or complaints regarding this Privacy Policy or METLA Cleaner, please contact us:</p>
-
+        <h2>1. Who we are and how to contact us</h2>
+        <p>METLA is developed by <strong>Al&nbsp;Badu&nbsp;team</strong>. We are responsible for the information described in this policy. Send questions about it, about your data or about deleting your account here:</p>
         <div class="contact-block">
-            <p>📧 <strong>Email:</strong> <a href="mailto:metla.support@gmail.com">metla.support@gmail.com</a></p>
-            <p>🌐 <strong>Telegram:</strong> <a href="https://t.me/metla_cleaner" target="_blank">@metla_cleaner</a></p>
-            <p style="margin-top: 8px; color: var(--text-muted);">Response time: usually within 24 hours.</p>
+            <p><strong>Email:</strong> <a href="mailto:metla.support@gmail.com">metla.support@gmail.com</a></p>
+            <p><strong>Support bot on Telegram:</strong> <a href="https://t.me/METLA_support_bot" target="_blank" rel="noopener">@METLA_support_bot</a></p>
+            <p style="color: var(--text-muted);">We usually reply within 24 hours. METLA news is posted in the <a href="https://t.me/metla_cleaner" target="_blank" rel="noopener">@metla_cleaner</a> channel (it is not a support channel).</p>
         </div>
 
-        <p style="margin-top: 32px; color: var(--text-muted); font-size: 13px;">© 2026 Al Badu team. All rights reserved. METLA Cleaner — premium Android cleaning and optimization.</p>
+        <h2>2. What stays on your device</h2>
+        <p>METLA reads and processes the following only on your device. The app has no way to send any of it over the network. The only exception is the error text in a crash report (section 3).</p>
+        <ul>
+            <li><strong>Files.</strong> To find junk, duplicates, thumbnails, empty folders, old and large files and to move what you delete to Quarantine, METLA needs file access: on Android&nbsp;11 and above&nbsp;— All files access; on Android&nbsp;<span class="nw">8–10</span>&nbsp;— the Storage permission and the folders you choose. The files themselves and the scan results never leave the device. METLA does not read other apps’ private folders (<em>Android/data</em> and <em>Android/obb</em>).</li>
+            <li><strong>List of installed apps:</strong> app names, icons, sizes and permissions&nbsp;— for the Apps and Activity screens, Anti-Spy and Radar.</li>
+            <li><strong>Usage statistics</strong>&nbsp;— a special access you grant yourself in Android settings: how often and how long apps run and when they ran in the background&nbsp;— for Apps, Activity, Radar and tips; the size of other apps’ cache&nbsp;— for Storage, Messengers and the daily tip.</li>
+            <li><strong>Other apps’ permissions (Anti-Spy):</strong> which of seven kinds of data&nbsp;— camera, microphone, location, contacts, phone, SMS, storage&nbsp;— an app has access to and which it only requests.</li>
+            <li><strong>The QR scanner for Family invites</strong> is a Google Play service on the device: it controls the camera, and METLA receives only the scanned code. METLA has no camera permission. The service itself may send Google information about how it works&nbsp;— under Google’s rules.</li>
+            <li><strong>Profile:</strong> your “About me” text and profile photo.</li>
+            <li><strong>Cleaning history, Quarantine and METLA settings.</strong></li>
+        </ul>
+        <p>METLA reads the list of apps, usage statistics and other apps’ permissions only after you tap “Agree and continue” on the Before You Continue screen. If you chose “Not now”, those screens show a placeholder, and you can agree later. Two things work without this consent: Messengers checks whether the five messengers on its list (WhatsApp, WhatsApp Business, Telegram, TikTok, Instagram) are installed, to show their files; and METLA shows the size of other apps’ cache if you yourself granted it usage access in Android settings&nbsp;— a total for the whole device plus the messengers’ sizes. None of this leaves the device.</p>
+
+        <h2>3. What leaves your device</h2>
+        <p>METLA runs on Google cloud services. Below is everything that leaves your device: when, why, who keeps it and for how long. Google Firebase and Google Cloud process this information for us as a service provider; Google Play, the backup in your Google account and Telegram are independent services that work under their own rules. Everything is sent over a secure connection (HTTPS). We do not sell this information and do not use it for advertising.</p>
+
+        <div class="card">
+            <h3>Anonymous METLA account</h3>
+            <dl>
+                <dt>When</dt><dd>From the first launch&nbsp;— even before the Before You Continue screen.</dd>
+                <dt>What</dt><dd>An account ID in the Firebase sign-in service. Such an account has no name and no email. With every request to our server METLA also sends the app language&nbsp;— so the server replies in your language.</dd>
+                <dt>Why</dt><dd>Plans, Family, tester access and sign-in recovery.</dd>
+                <dt>Kept by</dt><dd>Google (Firebase sign-in service) and our server.</dd>
+                <dt>How long</dt><dd>Until you delete the account.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>Sign-in recovery key (Android&nbsp;9 and above)</h3>
+            <dl>
+                <dt>When</dt><dd>From the first launch.</dd>
+                <dt>What</dt><dd>The key itself is kept on the device and&nbsp;— if the device has a screen lock and backup to your Google account is on&nbsp;— also in that backup; without it, the key does not move to a new device. Our server keeps its public part: the account ID, the public key, the key type, whether a cloud copy exists, a use counter and dates. For each sign-in the server creates a one-time service code that lives for 5 minutes.</dd>
+                <dt>Why</dt><dd>To return to the same METLA account after reinstalling or on a new device.</dd>
+                <dt>Kept by</dt><dd>Google and our server.</dd>
+                <dt>How long</dt><dd>Until you delete the account.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>App integrity check</h3>
+            <dl>
+                <dt>When</dt><dd>With every request to our server&nbsp;— also before the Before You Continue screen.</dd>
+                <dt>What</dt><dd>A Google Play Integrity token confirming that the request comes from the genuine METLA app (App Check), and the device ID in Google’s push notification service (an Instance ID token&nbsp;— for it the Firebase library registers an installation ID and attaches the token to the request).</dd>
+                <dt>Why</dt><dd>To protect the server from fake apps and abuse.</dd>
+                <dt>Kept by</dt><dd>Google (Google Play, Firebase).</dd>
+                <dt>How long</dt><dd>Per Google’s retention periods.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>Purchases</h3>
+            <dl>
+                <dt>When</dt><dd>At launch and when you buy.</dd>
+                <dt>What</dt><dd>METLA asks Google Play which METLA purchases your Google account has. The Individual subscription and Lifetime are checked on the device&nbsp;— nothing about them is sent to our server. Google Play itself sends our server notifications about all purchases; for purchases not related to Family, the server writes only a fingerprint of the purchase token to its log. Only Google sees your payment card details&nbsp;— we never receive them.</dd>
+                <dt>Kept by</dt><dd>Google Play; the log&nbsp;— Google Cloud.</dd>
+                <dt>How long</dt><dd>The log&nbsp;— up to 30 days.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>Family plans (Family 3, Family 5, Lifetime Family)</h3>
+            <dl>
+                <dt>When</dt><dd>When you buy a Family plan or join a family; once a day the server checks the purchase with Google Play.</dd>
+                <dt>What</dt><dd>The Google Play purchase token, the plan, subscription period and status, members, the dates the family was created and members joined, the invite code, family payment history, and the nicknames of the owner and members (“METLA User” if the nickname was not changed); for the account&nbsp;— the family ID, the role (owner or member) and the time of the last purchase check. The family owner sees members’ nicknames; the owner’s nickname is stored but shown to no one.</dd>
+                <dt>Why</dt><dd>To confirm the purchase with Google Play and give members Pro.</dd>
+                <dt>Kept by</dt><dd>Our server (Cloud Firestore).</dd>
+                <dt>How long</dt><dd>The family&nbsp;— until the owner deletes the account; a member’s membership and nickname&nbsp;— while they are in the family or until they delete their account.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>Linking a Google account (optional)</h3>
+            <dl>
+                <dt>When</dt><dd>Only if you link a Google account yourself in Profile.</dd>
+                <dt>What</dt><dd>The email, name, profile photo and ID of that Google account.</dd>
+                <dt>Why</dt><dd>To restore access to Family and your subscription after reinstalling.</dd>
+                <dt>Kept by</dt><dd>Google (Firebase sign-in service).</dd>
+                <dt>How long</dt><dd>Until you delete the account; in the sign-in service’s backups&nbsp;— up to 180 days after deletion.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>Tester email</h3>
+            <dl>
+                <dt>When</dt><dd>If you take part in METLA testing, we add the email you gave Google Play for testing to the tester list on our server ourselves&nbsp;— even if you never enter it in METLA. In METLA the email is sent to the server when you enter the email or the code and on every launch while it is saved&nbsp;— including in the background (Radar, auto-clean).</dd>
+                <dt>What</dt><dd>The email; the IDs of the accounts that confirmed it with a code; the dates of the last confirmation and the last check; our internal note. The confirmation code arrives by email via Gmail; a copy of that email with your address and the code stays in our mailbox’s sent folder.</dd>
+                <dt>Why</dt><dd>To give testers Pro: check that you are on the list and send you the code.</dd>
+                <dt>Kept by</dt><dd>Our server; Google (Gmail; the closed-testing list&nbsp;— in Google Play).</dd>
+                <dt>How long</dt><dd>The record of the entered email&nbsp;— up to a day; the wrong-attempt counter&nbsp;— up to two days; the email on the tester list&nbsp;— while testing goes on or until you ask us to remove it; the emails&nbsp;— until you ask us to delete them.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>Activation code</h3>
+            <dl>
+                <dt>When</dt><dd>If you enter an activation code in Profile (Subscription → Activation code).</dd>
+                <dt>What</dt><dd>The code itself&nbsp;— the server checks it and does not store it; if the code is accepted&nbsp;— your account ID on the list of confirmed accounts and the date.</dd>
+                <dt>Why</dt><dd>To unlock Pro with a code. For now there is one code&nbsp;— for Google Play reviewers.</dd>
+                <dt>Kept by</dt><dd>Our server.</dd>
+                <dt>How long</dt><dd>The account ID&nbsp;— until you delete your account or we revoke the code.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>IP address</h3>
+            <dl>
+                <dt>When</dt><dd>With every request to our server and the sign-in service, and when you open these documents in METLA (the pages are hosted on GitHub Pages)&nbsp;— this is how the internet works.</dd>
+                <dt>What</dt><dd>The address itself&nbsp;— in Google’s and GitHub’s logs. To protect against code guessing, our server keeps a fingerprint of the address (a SHA-256 hash&nbsp;— it does not make the address anonymous) in six counters: Family purchase check, invite code, tester code, activation code, account deletion, sign-in recovery on first launch.</dd>
+                <dt>Why</dt><dd>To deliver the response and protect the server from abuse.</dd>
+                <dt>Kept by</dt><dd>Google Cloud, the Firebase sign-in service, our server; GitHub&nbsp;— for the document pages.</dd>
+                <dt>How long</dt><dd>Google Cloud logs&nbsp;— up to 30 days; the sign-in service&nbsp;— a few weeks; the fingerprint&nbsp;— about a day; GitHub&nbsp;— under its own rules.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>Analytics (Google Analytics for Firebase)</h3>
+            <dl>
+                <dt>When</dt><dd>Only after “Agree and continue” and while the “Analytics and crash reports” switch in METLA Settings is on.</dd>
+                <dt>What</dt><dd>The installation ID, device model, Android and METLA versions, device language, approximate location (from the IP address), where the app was installed from, sessions (when and how long the app is open), in-app purchases, and service events that Analytics records by itself: first launch, METLA and Android updates, METLA removal and clearing its data. METLA does not send which screens you open and has no events of its own. The advertising ID is not collected, and advertising consents default to “no”.</dd>
+                <dt>Why</dt><dd>To find bugs and see how the app is used.</dd>
+                <dt>Kept by</dt><dd>Google.</dd>
+                <dt>How long</dt><dd>Detailed data&nbsp;— 2 months; Google Analytics keeps aggregated reports without device IDs longer.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>Crash reports (Firebase Crashlytics and Firebase Sessions)</h3>
+            <dl>
+                <dt>When</dt><dd>Only after you agree and while the same switch is on. Reports collected before you agree are deleted without being sent.</dd>
+                <dt>What</dt><dd>The error trace and its text (it occasionally contains the name or path of a file, or the name of an app, that METLA was working with at the moment of the crash), the app state, device information, the installation ID; and two kinds of payment errors without a crash&nbsp;— the code and text of the response from Google Play or our server.</dd>
+                <dt>Why</dt><dd>To find and fix bugs.</dd>
+                <dt>Kept by</dt><dd>Google.</dd>
+                <dt>How long</dt><dd>90 days.</dd>
+            </dl>
+        </div>
+
+        <div class="card">
+            <h3>Support requests</h3>
+            <dl>
+                <dt>When</dt><dd>When you write to us; a record of a bot user appears as soon as you first start the bot.</dd>
+                <dt>What</dt><dd>Email&nbsp;— your message and address. The @METLA_support_bot bot and its mini app&nbsp;— your Telegram ID, name, username and language; requests&nbsp;— text, category, priority, status and dates; attachments (photos and documents up to 20 MB); reviews and a support rating from 1 to 5.</dd>
+                <dt>Why</dt><dd>To reply to you.</dd>
+                <dt>Kept by</dt><dd>Emails&nbsp;— our mailbox (Gmail). The bot&nbsp;— its database (Supabase) and the bot server hosted on Railway, including server logs with your Telegram ID; messages are forwarded to our internal Telegram chat, and the first message of a request is also copied to our mailbox through our server; attachments are kept by Telegram. Telegram itself works under its own rules.</dd>
+                <dt>How long</dt><dd>As long as needed to reply and keep the request history; we delete them at your request. Hosting logs&nbsp;— per Railway’s retention periods.</dd>
+            </dl>
+        </div>
+
+        <p>Google windows on your device&nbsp;— payment, rating METLA on Google Play, signing in with a Google account, the QR scanner&nbsp;— work under Google’s rules: what you enter in them is processed by Google. METLA receives only the result&nbsp;— the purchase, the linked account’s data, the scanned code; METLA does not see your rating or review.</p>
+
+        <h2>4. Permissions</h2>
+        <p>There are no permission prompts at launch: METLA asks for each permission when you tap a button where it is needed. If you decline twice, METLA offers to open Android settings. Below is the full list of METLA’s permissions, including the service permissions added by Google and Android libraries.</p>
+
+        <h3>METLA’s permissions</h3>
+        <ul>
+            <li><strong>All files access</strong> (<code>MANAGE_EXTERNAL_STORAGE</code>), Android&nbsp;11 and above: finding junk, duplicates and empty folders, moving what you delete to Quarantine and restoring files. Without it METLA cannot see photos, videos, music and documents and cannot delete files. METLA has no separate photo, video or music permissions.</li>
+            <li><strong>Storage</strong> (<code>READ_EXTERNAL_STORAGE</code>), Android&nbsp;<span class="nw">8–10</span>: the same tasks in the folders you chose; METLA deletes only inside them.</li>
+            <li><strong>List of installed apps</strong> (<code>QUERY_ALL_PACKAGES</code>): Apps, Activity, Anti-Spy and Radar (section 2).</li>
+            <li><strong>Usage statistics</strong> (<code>PACKAGE_USAGE_STATS</code>)&nbsp;— a special access in Android settings (section 2).</li>
+            <li><strong>Uninstalling apps</strong> (<code>REQUEST_DELETE_PACKAGES</code>): uninstall an app you picked&nbsp;— you confirm it in the Android dialog.</li>
+            <li><strong>Stopping background work</strong> (<code>KILL_BACKGROUND_PROCESSES</code>): ask Android to stop an app’s background work; works on Android&nbsp;<span class="nw">8–13</span>.</li>
+            <li><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>), Android&nbsp;13 and above: auto-clean results, junk and trial reminders, Radar alerts. You can turn them off in METLA Settings.</li>
+            <li><strong>Network state</strong> (<code>ACCESS_WIFI_STATE</code>, <code>ACCESS_NETWORK_STATE</code>): Device Pulse shows whether Wi-Fi is on and whether there is a network; libraries check for a connection.</li>
+            <li><strong>Bluetooth</strong> (<code>BLUETOOTH</code>), Android&nbsp;<span class="nw">8–11</span>: Device Pulse shows whether Bluetooth is on.</li>
+        </ul>
+
+        <h3>Library service permissions</h3>
+        <ul>
+            <li><strong>Internet</strong> (<code>INTERNET</code>): our server, Firebase, Google Play and the pages of these documents.</li>
+            <li><strong>Purchases</strong> (<code>BILLING</code>): payments through Google Play.</li>
+            <li><strong>Task scheduler</strong> (<code>WAKE_LOCK</code>, <code>RECEIVE_BOOT_COMPLETED</code>, <code>FOREGROUND_SERVICE</code>): scheduled auto-clean, Radar and reminders, including after a restart.</li>
+            <li><strong>Google push notification service</strong> (<code>RECEIVE</code>): the device ID that Firebase libraries attach to requests (section 3, “App integrity check”).</li>
+            <li><strong>Install source</strong> (<code>BIND_GET_INSTALL_REFERRER_SERVICE</code>): analytics learns where the app was installed from&nbsp;— only after you agree.</li>
+            <li><strong>Google service permission</strong> (<code>READ_GSERVICES</code>): added by the protection of the Firebase sign-in service (reCAPTCHA).</li>
+            <li><strong>Biometrics</strong> (<code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code>): added by an Android library; METLA does not use biometrics.</li>
+            <li><strong>Internal permission</strong> (<code>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>): a service permission of the AndroidX library that works only inside METLA.</li>
+        </ul>
+        <p>What METLA does not have: the advertising ID and the related Android ad services permissions, camera permission, photo, video and music permissions, write-to-storage, Bluetooth device connection and location permissions.</p>
+
+        <h2>5. Quarantine, history and backup</h2>
+        <p>Files you delete in METLA go to Quarantine first. On Android&nbsp;11 and above a file is moved without copying into the hidden <em>.METLA_Trash</em> folder at the root of the same storage (device storage or memory card); on Android&nbsp;<span class="nw">8–10</span> Quarantine keeps a copy in METLA’s internal storage. Quarantine exists only on your device. Space is freed when a file leaves Quarantine.</p>
+        <p>On Android&nbsp;11 and above the Quarantine folder is in the device’s shared storage: file managers and other apps with All files access can see it.</p>
+        <p>The default retention period is 30 days; for free you can choose 7, 14 or 30 days, and with Pro also 60 days or “No time limit”. “Auto-clean Quarantine” is on by default: when the period ends, the file is deleted permanently. The default Quarantine size is 1 GB (from 256 MB to 10 GB). When it runs out of space, METLA warns you and asks before permanently deleting the oldest files.</p>
+        <p>A file can be restored while it is in Quarantine and METLA has file access (on Android&nbsp;11 and above&nbsp;— All files access). On Android&nbsp;<span class="nw">8–9</span> a file can be restored only to the folders you chose.</p>
+        <p>If you uninstall METLA on Android&nbsp;11 and above, the <em>.METLA_Trash</em> folder remains&nbsp;— you can delete it with any file manager; after reinstalling, METLA does not see the earlier files in it. On Android&nbsp;<span class="nw">8–10</span> Quarantine is erased together with METLA, and also by “Clear storage” in Android settings.</p>
+        <p>Cleaning history is stored only on the device; you can clear it in Profile. METLA does not make an Android backup at all&nbsp;— neither to the cloud nor when moving to a new device: history, Quarantine, settings and the profile photo do not move over. Your previous METLA account comes back on a new device through the recovery key, if it got into the cloud backup, or through a linked Google account (section 3).</p>
+
+        <h2>6. Retention and account deletion</h2>
+        <h3>How long we keep it</h3>
+        <ul>
+            <li>The account, the public part of the recovery key, the family and its payment history&nbsp;— until you delete the account.</li>
+            <li>The record of an entered tester email&nbsp;— up to a day; the wrong-attempt counter&nbsp;— up to two days; the email on the tester list&nbsp;— while testing goes on or until you ask us to remove it.</li>
+            <li>The IP address fingerprint&nbsp;— about a day.</li>
+            <li>Google Cloud server logs&nbsp;— up to 30 days. They may contain the account and family IDs, the IP address, a purchase token fingerprint, the plan’s product ID, a support request number, and&nbsp;— if sending the code email fails&nbsp;— a masked tester email (first letter and domain).</li>
+            <li>Firebase sign-in service: IP addresses&nbsp;— a few weeks; linked Google account data after deletion&nbsp;— in backups for up to 180 days.</li>
+            <li>Analytics&nbsp;— 2 months (aggregated reports without device IDs&nbsp;— longer); crash reports&nbsp;— 90 days.</li>
+            <li>Emails and support requests&nbsp;— as long as needed to reply; we delete them at your request. Bot hosting logs&nbsp;— per Railway’s retention periods.</li>
+            <li>The “account deleted, when” marker&nbsp;— indefinitely (see below).</li>
+        </ul>
+
+        <h3>How to delete your account</h3>
+        <p>In the app: Profile → Account &amp; data → Delete account. Or write to us (section 1)&nbsp;— we will delete it within 5 business days; the steps are on the <a href="https://metla-a90ddd36.web.app/delete-account.html" target="_blank" rel="noopener">account deletion page</a>.</p>
+        <p><strong>Erased on the server:</strong> the family (if it has no members&nbsp;— together with its payment history and invite code) or your family membership, nicknames, purchase links, tester confirmation (the account ID is removed from the list of confirmed accounts together with the last-check entry) and records of emails entered from this account, the public part of the recovery key, sign-in.</p>
+        <p><strong>Erased on the device:</strong> the recovery key (also from the cloud copy), the nickname (back to “METLA User”), “About me” and the profile photo, the saved tester email, family information, analytics data and the installation ID. After deletion METLA creates a new anonymous account by itself; a Family purchase is not attached to it automatically&nbsp;— only if you tap “Restore purchases” or buy again. If we delete the account at your request by email, nothing changes on the device: this data stays there until you uninstall METLA; the recovery key may remain, but it no longer works.</p>
+        <p><strong>What remains:</strong> a deletion marker&nbsp;— under the random ID of the deleted account, only “deleted” and “when”, with no name, email, device or purchase data; it is kept indefinitely so that a copy of the app still signed in with the deleted account cannot restore it, rejoin a family or claim a purchase. Google Cloud logs&nbsp;— up to 30 days. Tester code emails and support requests&nbsp;— until you ask us to delete them. Analytics and crash reports already sent are not linked to the account and are kept for their own periods. On the device, the cleaning history, Quarantine and the Radar list remain.</p>
+        <p>A family owner whose family still has members deletes the account through support&nbsp;— so the members do not lose Pro without warning. Deleting the account does not cancel a Google Play subscription: cancel it in Google Play. Uninstalling METLA does not delete the account, and the server does not remove abandoned accounts by itself&nbsp;— so if you want the data erased, delete the account first and then uninstall METLA, or write to us.</p>
+
+        <h2>7. Your rights and choices</h2>
+        <ul>
+            <li><strong>Analytics and crash reports:</strong> tap “Not now” on the Before You Continue screen or turn off the “Analytics and crash reports” switch in METLA Settings&nbsp;— at any time. What has already been sent is kept for the periods in section 3.</li>
+            <li><strong>Access:</strong> you can revoke each access in Android settings.</li>
+            <li><strong>Information about you:</strong> write to us to find out what we keep about you, correct it or delete it. You can also delete your account in the app (section 6). We answer such requests within one month.</li>
+        </ul>
+
+        <h2>8. For residents of the EU, EEA, UK and Switzerland</h2>
+        <p>The data controller is Al&nbsp;Badu&nbsp;team (contacts&nbsp;— section 1). Legal bases:</p>
+        <ul>
+            <li><strong>performance of a contract</strong>&nbsp;— plans, Family, tester access, support replies;</li>
+            <li><strong>legitimate interest</strong>&nbsp;— the anonymous account and recovery key (to keep your plan and access), protecting the server and purchases from abuse: app integrity checks, IP address fingerprints, server logs;</li>
+            <li><strong>consent</strong>&nbsp;— analytics and crash reports: turned on by “Agree and continue” (the “Analytics and crash reports” switch is on by default); you can withdraw consent at any time with that switch.</li>
+        </ul>
+        <p>If you are younger than the age at which you can consent to data processing yourself in your country (in EU countries&nbsp;— from 13 to 16), only a parent or guardian can consent to analytics and crash reports; without that consent, tap “Not now”.</p>
+        <p>Data may be processed outside your country, including in the United States. Google (Firebase, Google Cloud, Gmail) processes it for us under its data processing terms, which include the European Commission’s Standard Contractual Clauses; Supabase and Railway&nbsp;— under their own data processing terms; Google Play, Telegram and GitHub are independent services that work under their own rules.</p>
+        <p>You have the right to access your data, to have it corrected or erased, to restrict processing, to data portability, to object to processing and to withdraw consent, as well as the right to lodge a complaint with the data protection authority in your country.</p>
+
+        <h2>9. Children</h2>
+        <p>METLA is not intended for children under 13, and we do not knowingly collect information about them. If you learn that a child has sent us information, write to us&nbsp;— we will delete it.</p>
+
+        <h2>10. Security</h2>
+        <p>Everything that leaves the device is sent over a secure connection (HTTPS). The app never accesses our database directly&nbsp;— only through our server functions, and every request passes the app integrity check. On the device, METLA’s data is protected by your screen lock and Android encryption; on Android&nbsp;11 and above Quarantine is in shared storage (section 5).</p>
+
+        <h2>11. Changes to this policy</h2>
+        <p>A new version is published on this page with a new “Last updated” date at the top. If what METLA collects changes, the app will show the Before You Continue screen again. The previous version (September&nbsp;30, 2026) described METLA up to and including version 1.3.0: in those versions analytics started right away, without consent, and the advertising ID was collected.</p>
+
+        <h2>12. Terms of Use</h2>
+        <p>The rules for using METLA, the license, subscriptions and refunds are in the <a href="terms/en.html">Terms of Use</a>.</p>
+
+        <p class="footer">© 2026 Al&nbsp;Badu&nbsp;team. METLA Cleaner&nbsp;— a storage cleaning app for Android.</p>
     </div>
 </body>
 </html>
