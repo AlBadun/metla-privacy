@@ -138,7 +138,7 @@
         </nav>
 
         <h1>Privacy Policy</h1>
-        <p class="update-date">METLA Cleaner · Last updated: October&nbsp;18, 2026</p>
+        <p class="update-date">METLA Cleaner · Last updated: November&nbsp;4, 2026</p>
 
         <p>This policy explains what information the METLA Cleaner app for Android (“METLA”) reads and sends: why, who keeps it and for how long. It describes METLA versions newer than 1.3.0.</p>
 
@@ -297,11 +297,11 @@
         <div class="card">
             <h3>Support requests</h3>
             <dl>
-                <dt>When</dt><dd>When you write to us; a record of a bot user appears as soon as you first start the bot.</dd>
+                <dt>When</dt><dd>When you write to us; a record of your bot language only if you changed it.</dd>
                 <dt>What</dt><dd>Email&nbsp;— your message and address. The @METLA_support_bot bot and its mini app&nbsp;— your Telegram ID, name, username and language; requests&nbsp;— text, category, priority, status and dates; attachments (photos and documents up to 20 MB); reviews and a support rating from 1 to 5.</dd>
                 <dt>Why</dt><dd>To reply to you.</dd>
-                <dt>Kept by</dt><dd>Emails&nbsp;— our mailbox (Gmail). The bot&nbsp;— its database (Supabase) and the bot server hosted on Railway, including server logs with your Telegram ID; messages are forwarded to our internal Telegram chat, and the first message of a request is also copied to our mailbox through our server; attachments are kept by Telegram. Telegram itself works under its own rules.</dd>
-                <dt>How long</dt><dd>As long as needed to reply and keep the request history; we delete them at your request. Hosting logs&nbsp;— per Railway’s retention periods.</dd>
+                <dt>Kept by</dt><dd>Emails&nbsp;— our mailbox (Gmail). The bot&nbsp;— its database (Supabase) and the bot server hosted on Railway, including server logs with your Telegram ID; messages are forwarded to our internal Telegram chat and internal alert channel (access for METLA support only), and the first message of a request is also copied to our mailbox through our server; attachments are kept by Telegram. Telegram itself works under its own rules.</dd>
+                <dt>How long</dt><dd>Emails&nbsp;— as long as needed to reply. The bot deletes closed requests from its database 12&nbsp;months after they are closed; your bot language record and the copies in our mailbox and internal chat and channel stay until you ask us to delete them. At your request we delete them sooner&nbsp;— within 30&nbsp;days: from the bot database, our mailbox and the internal chat and channel. Hosting logs&nbsp;— per Railway’s retention periods.</dd>
             </dl>
         </div>
 
@@ -353,7 +353,7 @@
             <li>Google Cloud server logs&nbsp;— up to 30 days. They may contain the account and family IDs, the IP address, a purchase token fingerprint, the plan’s product ID, a support request number, and&nbsp;— if sending the code email fails&nbsp;— a masked tester email (first letter and domain).</li>
             <li>Firebase sign-in service: IP addresses&nbsp;— a few weeks; linked Google account data after deletion&nbsp;— in backups for up to 180 days.</li>
             <li>Analytics&nbsp;— 2 months (aggregated reports without device IDs&nbsp;— longer); crash reports&nbsp;— 90 days.</li>
-            <li>Emails and support requests&nbsp;— as long as needed to reply; we delete them at your request. Bot hosting logs&nbsp;— per Railway’s retention periods.</li>
+            <li>Emails to support&nbsp;— as long as needed to reply; closed requests in the bot database&nbsp;— 12&nbsp;months after closing; your bot language record and the copies in our mailbox and internal chat and channel&nbsp;— until you ask us to delete them; at your request we delete them sooner&nbsp;— within 30&nbsp;days. Bot hosting logs&nbsp;— per Railway’s retention periods.</li>
             <li>The “account deleted, when” marker&nbsp;— indefinitely (see below).</li>
         </ul>
 
@@ -361,7 +361,7 @@
         <p>In the app: Profile → Account &amp; data → Delete account. Or write to us (section 1)&nbsp;— we will delete it within 5 business days; the steps are on the <a href="https://metla-a90ddd36.web.app/delete-account.html" target="_blank" rel="noopener">account deletion page</a>.</p>
         <p><strong>Erased on the server:</strong> the family (if it has no members&nbsp;— together with its payment history and invite code) or your family membership, nicknames, purchase links, tester confirmation (the account ID is removed from the list of confirmed accounts together with the last-check entry) and records of emails entered from this account, the public part of the recovery key, sign-in.</p>
         <p><strong>Erased on the device:</strong> the recovery key (also from the cloud copy), the nickname (back to “METLA User”), “About me” and the profile photo, the saved tester email, family information, analytics data and the installation ID. After deletion METLA creates a new anonymous account by itself; a Family purchase is not attached to it automatically&nbsp;— only if you tap “Restore purchases” or buy again. If we delete the account at your request by email, nothing changes on the device: this data stays there until you uninstall METLA; the recovery key may remain, but it no longer works.</p>
-        <p><strong>What remains:</strong> a deletion marker&nbsp;— under the random ID of the deleted account, only “deleted” and “when”, with no name, email, device or purchase data; it is kept indefinitely so that a copy of the app still signed in with the deleted account cannot restore it, rejoin a family or claim a purchase. Google Cloud logs&nbsp;— up to 30 days. Tester code emails and support requests&nbsp;— until you ask us to delete them. Analytics and crash reports already sent are not linked to the account and are kept for their own periods. On the device, the cleaning history, Quarantine and the Radar list remain.</p>
+        <p><strong>What remains:</strong> a deletion marker&nbsp;— under the random ID of the deleted account, only “deleted” and “when”, with no name, email, device or purchase data; it is kept indefinitely so that a copy of the app still signed in with the deleted account cannot restore it, rejoin a family or claim a purchase. Google Cloud logs&nbsp;— up to 30 days. Tester code emails&nbsp;— until you ask us to delete them; support requests&nbsp;— per the periods in section 3. Analytics and crash reports already sent are not linked to the account and are kept for their own periods. On the device, the cleaning history, Quarantine and the Radar list remain.</p>
         <p>A family owner whose family still has members deletes the account through support&nbsp;— so the members do not lose Pro without warning. Deleting the account does not cancel a Google Play subscription: cancel it in Google Play. Uninstalling METLA does not delete the account, and the server does not remove abandoned accounts by itself&nbsp;— so if you want the data erased, delete the account first and then uninstall METLA, or write to us.</p>
 
         <h2>7. Your rights and choices</h2>
@@ -389,7 +389,7 @@
         <p>Everything that leaves the device is sent over a secure connection (HTTPS). The app never accesses our database directly&nbsp;— only through our server functions, and every request passes the app integrity check. On the device, METLA’s data is protected by your screen lock and Android encryption; on Android&nbsp;11 and above Quarantine is in shared storage (section 5).</p>
 
         <h2>11. Changes to this policy</h2>
-        <p>A new version is published on this page with a new “Last updated” date at the top. If what METLA collects changes, the app will show the Before You Continue screen again. The previous version (September&nbsp;30, 2026) described METLA up to and including version 1.3.0: in those versions analytics started right away, without consent, and the advertising ID was collected.</p>
+        <p>A new version is published on this page with a new “Last updated” date at the top. If what METLA collects changes, the app will show the Before You Continue screen again. The version of September&nbsp;30, 2026 described METLA up to and including version 1.3.0: in those versions analytics started right away, without consent, and the advertising ID was collected.</p>
 
         <h2>12. Terms of Use</h2>
         <p>The rules for using METLA, the license, subscriptions and refunds are in the <a href="terms/en.html">Terms of Use</a>.</p>
